@@ -10,8 +10,12 @@ async function readData(path: string = "./plain-texts/data.json") {
 (async () => {
   const data = await readData();
   data.forEach((s: any) => {
+    const speakersRaw = s.speech.speakers;
+    const speakers: any = {};
+    speakersRaw.forEach((speaker: any) => speakers[speaker.id] = speaker.speaker_name);
+    
     const transcripts = s.speech.transcripts as any[];
-    const string = transcripts.reduce((a: string, v: any) => a + "\n" + v.transcript, "");
+    const string = transcripts.reduce((a: string, v: any) => a + "\n" + `${v.speaker_id ? speakers[v.speaker_id] : "Someone"}: ` + v.transcript, "");
     try {
         fs.writeFile(`./plain-texts/${s.speech.speech_id}.txt`, string);
     } catch (err) {
