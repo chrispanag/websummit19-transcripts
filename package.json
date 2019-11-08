@@ -1,15 +1,21 @@
 {
-  "name": "websummit-transcripts",
+  "name": "websummit2019-transcripts",
   "version": "1.0.0",
-  "description": "",
+  "description": "Transcripts of Websummit 2019 Speeches",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "datagen": "node ./dist/datagen.js",
+    "preprocess": "node ./dist/preprocess.js",
+    "compile": "npx tsc"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Christos Panagiotakopoulos <chrispanag@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@types/node-fetch": "^2.5.3",
     "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.6"
   }
 }
