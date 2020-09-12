@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/node-fetch": "^2.5.3",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "typescript": "^3.6"
